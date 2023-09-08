@@ -98,7 +98,8 @@ sudo docker run --cap-add SYS_PTRACE -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=pa
 > 참조 : https://learn.microsoft.com/ko-kr/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash
 
 ## Chapter별 예제
-> **Note** 일부 예제 실행 시, 추가 설정 또는 참고가 필요한 사항은 아래 각 chapter별 페이지 기술함 
+> **Note**  
+> 일부 예제 실행 시, 추가 설정 또는 참고가 필요한 사항은 아래 각 chapter별 페이지 기술함 
 
 - [Chapter 1 : Associations](chapter1/README.md)
 - [Chapter 2 : Entities](chapter2/README.md)
@@ -122,4 +123,7 @@ sudo docker run --cap-add SYS_PTRACE -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=pa
 
 ## 참조
 - 원서 정보 : https://link.springer.com/book/10.1007/978-1-4842-5626-8
-- 원저자 예제 코드 : https://github.com/AnghelLeonard/Hibernate-SpringBoot (라이선스: Apache v2.0)
+- 원저자 예제 코드 : https://github.com/AnghelLeonard/Hibernate-SpringBoot (라이선스: Apache license v2.0)
+
+## 라이선스
+Apache license, version 2.0
