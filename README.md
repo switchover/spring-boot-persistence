@@ -122,4 +122,4 @@ sudo docker run --cap-add SYS_PTRACE -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=pa
 
 ## 참조
 - 원서 정보 : https://link.springer.com/book/10.1007/978-1-4842-5626-8
-- 저자 예제 코드 : https://github.com/AnghelLeonard/Hibernate-SpringBoot
+- 원저자 예제 코드 : https://github.com/AnghelLeonard/Hibernate-SpringBoot (라이선스: Apache v2.0)
