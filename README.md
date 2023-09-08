@@ -19,9 +19,9 @@
 - 데이터베이스 연결 계정을 전체 관리자 권한인 `root`에서 개별 계정(`bookstore` 등)으로 변경했습니다.
     - 참고로, 원서 예제의 경우 `createDatabaseIfNotExist` 속성(MySQL)을 `true`로 지정해 schema 자체를 새롭게 생성할 수 있도록 관리자 권한을 부여한 것입니다.
 - Hibernate `ddl-auto` 속성을 `create`에서 대부분 `validate`로 변경(필요한 경우 `create`를 유지)했습니다.
-    - 예제 실행에 필요한 테이블 등의 생성(DDL; Data Definition Language)은 `schema-*.sql` 파일을 통해 처리되며, 다른 예제에서 생성된 관련된 테이블을 모두 삭제하도록 구성되었습니다. (동일한 이름의 테이블이 다른 속성 및 관계를 갖을 수 있으며, 이에 따라 관계가 있는 테이블에 의해 삭제가 되지 않는 경우가 발생될 수 있음) 
+    - 예제 실행에 필요한 테이블 등의 생성(DDL; Data Definition Language)은 `schema-*.sql` 파일을 통해 처리되며, 다른 예제에서 생성된 관련된 테이블을 모두 삭제하도록 구성되었습니다. (동일한 이름의 테이블이 다른 속성 및 관계를 갖을 수 있으며, 이에 따라 관계가 있는 테이블에 의해 삭제가 되지 않는 경우를 방지) 
 - 원서의 내용을 크게 해치지 않는 수준에서 코드 컨벤션(convention) 변경, 코드 수정(warning 제거 등) 및 설정 변경을 했습니다.
-- 예제 디렉토리 구성 시, `HibernateSpringBoot` prefix 부분을 제외하였습니다.
+- 예제 디렉토리 구성 시, `HibernateSpringBoot*` prefix 부분을 제외하였습니다.
     - 예시 : `HibernateSpringBootOneToManyBidirectional` -> `OneToManyBidirectional`
 
 
@@ -30,9 +30,9 @@
 예제들은 총 3개의 데이터베이스를 사용합니다.
 - MySQL
 - PostgreSQL
-- Microsoft SQL Server
+- Microsoft SQL Server (1개 예제)
 
-예제들은 대부분 MySQL를 사용하고, 필요한 경우 PostgreSQL를 사용합니다. 14장의 `INListPadding` 에제만 SQL Server를 활용합니다.
+예제들은 대부분 MySQL를 사용하고, 필요한 경우 PostgreSQL를 사용합니다. 14장의 `INListPadding` 예제만 SQL Server를 활용합니다.
 
 ### MySQL 구성
 MySQL 사용 예제는 다음과 같은 6개의 database를 사용합니다.
@@ -51,7 +51,7 @@ flush privileges;
 ※ 실제 DDL 및 DCL(Data Control Language)문은 사용 MySQL 버전에 따라 차이가 있을 수 있으며, 사용 계정 정보 등은 각 예제의 `application.properties` 파일을 참조하세요.
 
 #### 참고사항
-일부 예제에서 Trigger 생성이 필요하며, 이를 위해 다음과 같은 명령실행이 필요합니다. (root 권한으로 실행)
+일부 예제에서 Trigger 생성이 필요하며, 이를 위해 다음과 같은 명령 실행이 필요합니다. (root 권한으로 실행)
 
 ```sql
 SET GLOBAL log_bin_trust_function_creators=ON;
@@ -94,11 +94,11 @@ Docker 실행 예시는 다음과 같습니다.
 sudo docker run --cap-add SYS_PTRACE -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=password" -p 1433:1433 --name sqlserver -d mcr.microsoft.com/azure-sql-edge
 ```
 
-참고로, SQL Server Linux 컨테이너 이미지도 제공하나 Linux(amd64) 호스트만 지원합니다.
+참고로, SQL Server Linux 컨테이너 이미지도 제공되나 Linux(amd64) 호스트만 지원합니다. (Windows 또는 Mac에서는 사용 불가)
 > 참조 : https://learn.microsoft.com/ko-kr/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash
 
 ## Chapter별 예제
-    일부 예제 실행 시, 추가 설정 또는 참고가 필요한 사항은 아래 각 chapter별 페이지 기술함 
+> **Note** 일부 예제 실행 시, 추가 설정 또는 참고가 필요한 사항은 아래 각 chapter별 페이지 기술함 
 
 - [Chapter 1 : Associations](chapter1/README.md)
 - [Chapter 2 : Entities](chapter2/README.md)
